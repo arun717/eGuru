@@ -1,0 +1,4 @@
+Exception in thread "main" java.lang.Error: Unresolved compilation problem: 
+	Syntax error on token "second", delete this token
+
+	at SwapNumbers.main(SwapNumbers.java:22)
