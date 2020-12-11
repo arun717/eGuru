@@ -1,0 +1,19 @@
+Install your Plugin to Eclipse
+
+Right-click your plugin project in Package Explorer window.
+
+Press Export... in shown context menu.
+
+Select Plug-In Development -> Deployable plug-ins and fragments (or Deployable plug-ins and fragments directly in old Eclipses).
+
+Use it to get plugin JAR file, i.e. org.plugin.helloworld_1.0.0.201504042200.jar
+
+Close Eclipse. 
+
+Put the JAR in a folder named dropins/eclipse/plugins under your target eclipse directory.
+
+Run Eclipse again.
+
+Now you'll see "Sample Menu" with "Sample Action" item on ever Eclipse run.
+
+Note: You can write an automatic installer for your plugin for Windows users, or publish your plugin to... the Eclipse Marketplace! :))

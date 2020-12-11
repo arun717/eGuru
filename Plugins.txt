@@ -1,0 +1,92 @@
+Referances  (Eclipse Plugin Development)
+https://www.vogella.com/tutorials/EclipseJarToPlugin/article.html
+https://www.vogella.com/tutorials/EclipsePlugin/article.html
+
+* An Eclipse application consists of individual software components, called plug-ins. 
+For example, the Eclipse Java IDE provides the functionality to develop Java applications via the JDT plug-ins.
+
+* Plugins are the smallest deployable and installable software components of Eclipse
+
+* Each plugin can define extension-points which define possibilities for functionality contributions (code and non-code) by other plugins.
+  Non-code functionality contributions can, for example, provide help content.
+
+* Eclipse plugin development
+  - The Plug-in Development Environment (PDE) provides tools to create, develop, test, debug, build and deploy Eclipse plug-ins, fragments, features, update sites and products.
+  
+* Open Services Gateway Initiative
+The Open Services Gateway Initiative (OSGi), also known as the Dynamic Module System for Java, defines an architecture for modular application development.
+
+OSGi (Open Service Gateway Initiative) is a Java framework for developing and deploying modular software programs and libraries. 
+A part of it is a specification for modular components called bundles, which are commonly referred to as plug-ins.
+
+Applications or components (coming in the form of bundles for deployment), can be remotely installed, started, stopped, updated, and uninstalled without requiring a reboot. 
+The OSGI service registry detects the addition of new bundles, updated bundles, or the removal of bundles, and reloads accordingly.
+
+* create Eclipse plug-ins from Java libraries (JAR files)
+- Java libraries are delivered as JAR files. 
+- plug-ins require additional meta-data in the META-INF/MANIFEST.MF file
+
+* Plain JAR's = JAVA libraries without OSGi metadata
+- can convert an plain JAR file into a valid plug-in by adding such meta-data to its manifest. 
+
+* Several ways to convert a JAR file to an plug-in.
+
++ Manually convert the JAR file to a plug-in via an Eclipse wizard
+
++ Use Gradle plug-ins to converts JARs
+
++ Use Maven plug-ins to convert JARs
+
+
+* Using the new plug-in project
+In the plug-in project which should access the library, open the MANIFEST.MF file and select the Dependencies tab. 
+Add the new plug-in as dependency.
+
+* What is Gradle ?
+- Gradle is a build automation tool often used for JVM languages
+- Gradle can be configured to run Tasks which do things like compile jar s, run tests, create documentation etc.
+
+* Convert JAR files to OSGi bundles with Gradle
+- The Gradle build system can be used to convert JARs to OSGi bundles via the bnd-platform Gradle plug-in.
+- It can be added to a build.gradle file like this:
+	plugins {
+	  id "org.standardout.bnd-platform" version "1.7.0"
+	}
+- When running a build all dependencies and all its transitive dependencies will be downloaded automatically and can be found in the plugins folder.
+
+* Convert JAR files to OSGi bundles with the p2-maven-plugin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

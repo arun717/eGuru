@@ -1,0 +1,81 @@
+CREATE TABLE  TeamDetails   
+( 
+TeamID VARCHAR(100) NOT NULL,   
+TeamName VARCHAR(50) NOT NULL,   
+GitHubURL VARCHAR(50) NOT NULL,
+ImageUrl VARCHAR(50) NOT NULL,
+PRIMARY KEY(TeamID)
+); 
+
+CREATE TABLE  TeamMemberDetails 
+( 
+MemberID VARCHAR(100) NOT NULL,   
+MemberName VARCHAR(50) NOT NULL,   
+TeamID VARCHAR(100),
+PRIMARY KEY(MemberID),
+FOREIGN KEY (TeamID) REFERENCES TeamDetails(TeamID)
+); 
+
+CREATE TABLE  teacherlogin   
+( 
+Uname VARCHAR(100) NOT NULL,   
+Pass VARCHAR(50) NOT NULL,   
+PRIMARY KEY(Uname)
+); 
+
+CREATE TABLE  studentlogin   
+( 
+Uname VARCHAR(100) NOT NULL,   
+Pass VARCHAR(50) NOT NULL,   
+PRIMARY KEY(Uname)
+); 
+
+CREATE TABLE  otherlogin   
+( 
+Uname VARCHAR(100) NOT NULL,   
+Pass VARCHAR(50) NOT NULL,   
+PRIMARY KEY(Uname)
+); 
+
+CREATE TABLE  feedback   
+( 
+id int NOT NULL AUTO_INCREMENT,
+Uname VARCHAR(100) NOT NULL,   
+Entity VARCHAR(50) NOT NULL,   
+Feedback VARCHAR(65535) NOT NULL,
+PRIMARY KEY (id)
+); 
+
+CREATE TABLE  Lvl1_4_Assig   
+( 
+Assignment_id int NOT NULL,
+Objectives VARCHAR(20000) NULL, 
+Outcomes VARCHAR(20000) NULL,
+Questions VARCHAR(20000) NULL,    
+Resources VARCHAR(20000) NULL, 
+PRIMARY KEY (Assignment_id)
+); 
+
+CREATE TABLE  Lvl2_TBL_Assig   
+( 
+Assignment_id int NOT NULL,
+Prepreparation VARCHAR(20000) NULL, 
+Objectives VARCHAR(20000) NULL, 
+Outcomes VARCHAR(20000) NULL,
+Questions VARCHAR(20000) NULL,    
+Resources VARCHAR(20000) NULL, 
+PRIMARY KEY (Assignment_id)  
+); 
+
+CREATE TABLE  Lvl3_CSD_Assig   
+( 
+Assignment_id int NOT NULL,
+Solo_1 VARCHAR(20000) NULL, 
+Solo_2 VARCHAR(20000) NULL, 
+Solo_3 VARCHAR(20000) NULL, 
+Solo_4 VARCHAR(20000) NULL, 
+Pair_1 VARCHAR(20000) NULL, 
+Pair_2 VARCHAR(20000) NULL, 
+Quad_1 VARCHAR(20000) NULL, 
+PRIMARY KEY (Assignment_id)  
+);
