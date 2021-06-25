@@ -21,7 +21,8 @@ Preferred Softwares to run the project to be installed:
 1. Eclipse
 2. XAMPP {This will include the MySql database}
 
-Setting up XAMPP
+
+**Setting up XAMPP**
 1. Download and install XAMPP software
 You may use this url or download from other sources too (https://www.apachefriends.org/download.html)
 
@@ -42,11 +43,44 @@ You may use this url or download from other sources too (https://www.apachefrien
 
 7. You are all set with the backend part of the application now !!!
 
-Setting up Eclipse Project
+**Setting up Eclipse Project**
 1. Make sure you have Eclipse downloaded and installed to run this project
 
-2. You can clone the repository from github and open it as a new project in your eclipse IDE. 
+2. You can clone the repository from github or download the code in zip format.
+
+3. Now if you have the zipped code downloaded then please extract it to some folder. Then from Eclipse goto File > Open Projects from File System.
+   And browse your extracted project folder as shown in the screenshot below.
+
+![image](https://user-images.githubusercontent.com/37172062/123423971-d603e400-d5dd-11eb-884a-73a7a42effd4.png)
+
+4. We actually need a Dynamic Web Project here. So we are going to create one from scratch and then copy the source code folders from our extracted project into it.
+
+5. Use File > New > Dynamic Web Project
+   Then copy paste and add the source code into it so that the the folders "src" has all the .java files
+   Copy paste Everything from "WebContent" folder and make sure everything is included/replaced even from "WEB-INF" and "META-INF".
    
+6. Adding your referenced libraries to the project:
+   Right click on your project and select Properties to open the Properties dialog.
+   Click on Java Build Path on the left navigation tree.
+   Select the Libraries tab on the right.
+   Select Classpath and then use the button at the right called as "Add External JAR" to locate the two jar's from your extracted project folder namely mysql-connector-java and servlet-api.jar
+
+**Setting up Tomcat Server in Eclipse**
+1. In Eclipse goto File > New > Others and select "Server"
+   You may select a Tomcat 7.0 version for this application and proceed.
+   ![image](https://user-images.githubusercontent.com/37172062/123424743-df418080-d5de-11eb-8222-47eb23f01b5e.png)
+
+**Running your application on Server**
+1. Now right click on your project name in the Project Explorer of Eclipse and select "Run as> Run on Server" 
+
+And you have your project running within a browser window within your Eclipse as shown in the screenshot below
+![image](https://user-images.githubusercontent.com/37172062/123428656-a8219e00-d5e3-11eb-86c7-8c3e7b4420cd.png)
+
+To proceed further from here and use the entire application you must fill details of login by accessing MySQL admin page first and entering some login details in the table.
+Once inserted a username and password for the corresponding role (Student/Teacher/Mentor), you can now access the webpage to login and proceed further to use the webapp locally.
+   
+   
+  
 
 
 
