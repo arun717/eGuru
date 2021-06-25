@@ -74,7 +74,8 @@ You may use this url or download from other sources too (https://www.apachefrien
 1. Now right click on your project name in the Project Explorer of Eclipse and select "Run as> Run on Server" 
 
 And you have your project running within a browser window within your Eclipse as shown in the screenshot below
-![image](https://user-images.githubusercontent.com/37172062/123428656-a8219e00-d5e3-11eb-86c7-8c3e7b4420cd.png)
+![image](https://user-images.githubusercontent.com/37172062/123429086-27af6d00-d5e4-11eb-8f28-a3b1526d0741.png)
+
 
 To proceed further from here and use the entire application you must fill details of login by accessing MySQL admin page first and entering some login details in the table.
 Once inserted a username and password for the corresponding role (Student/Teacher/Mentor), you can now access the webpage to login and proceed further to use the webapp locally.
