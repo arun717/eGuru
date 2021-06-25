@@ -15,7 +15,7 @@ Please read the readme file regarding how to intall plugin in eclipse
 Tables required for running the project in MySql database:
 Refer sql queries file for this
 
-=======================================================================================
+=======================================================
 
 Preferred Softwares to run the project to be installed:
 1. Eclipse
