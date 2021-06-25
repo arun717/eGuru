@@ -14,6 +14,7 @@ Please read the readme file regarding how to intall plugin in eclipse
 
 Tables required for running the project in MySql database:
 Refer sql queries file for this
+
 =======================================================================================
 
 Preferred Softwares to run the project to be installed:
@@ -33,6 +34,18 @@ You may use this url or download from other sources too (https://www.apachefrien
 
 4. On the extreme top left of your screen here, you may find "new" button to create a new MySQL database.
    Use that to create a database named as "eguru" and click on create.
+   
+5. Once you have your eguru database created, goto "SQL" from the top meny bar and run the create table queries from the file "sql queries" to create your tables.
+
+6. You may then choose your newly created tables, then click on "Insert" from the top menu bar and also insert dummy data in your tables.
+   Note: The data you insert here in the tables will be displayed to you prepopulated while running the application.
+
+7. You are all set with the backend part of the application now !!!
+
+Setting up Eclipse Project
+1. Make sure you have Eclipse downloaded and installed to run this project
+
+2. You can clone the repository from github and open it as a new project in your eclipse IDE. 
    
 
 
