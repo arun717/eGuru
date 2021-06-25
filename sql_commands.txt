@@ -1,60 +1,95 @@
-CREATE TABLE  TeamDetails   
-( 
-TeamID VARCHAR(100) NOT NULL,   
-TeamName VARCHAR(50) NOT NULL,   
-GitHubURL VARCHAR(50) NOT NULL,
-ImageUrl VARCHAR(50) NOT NULL,
-PRIMARY KEY(TeamID)
-); 
+CREATE TABLE `teamdetails` (
+  `TeamID` varchar(100) NOT NULL,
+  `TeamName` varchar(50) NOT NULL,
+  `GitHubURL` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE  TeamMemberDetails 
-( 
-MemberID VARCHAR(100) NOT NULL,   
-MemberName VARCHAR(50) NOT NULL,   
-TeamID VARCHAR(100),
-PRIMARY KEY(MemberID),
-FOREIGN KEY (TeamID) REFERENCES TeamDetails(TeamID)
-); 
+INSERT INTO `teamdetails` (`TeamID`, `TeamName`, `GitHubURL`) VALUES
+('1', 'Team1', 'https://github.com/Team1/JavaProject'),
+('2', 'Team2', 'https://github.com/Team2/JavaProject'),
+('3', 'Team3', 'https://github.com/Team3/JavaProject');
 
-CREATE TABLE  teacherlogin   
-( 
-Uname VARCHAR(100) NOT NULL,   
-Pass VARCHAR(50) NOT NULL,   
-PRIMARY KEY(Uname)
-); 
 
-CREATE TABLE  studentlogin   
-( 
-Uname VARCHAR(100) NOT NULL,   
-Pass VARCHAR(50) NOT NULL,   
-PRIMARY KEY(Uname)
-); 
 
-CREATE TABLE  otherlogin   
-( 
-Uname VARCHAR(100) NOT NULL,   
-Pass VARCHAR(50) NOT NULL,   
-PRIMARY KEY(Uname)
-); 
+CREATE TABLE `teammemberdetails` (
+  `MemberID` varchar(100) NOT NULL,
+  `MemberName` varchar(50) NOT NULL,
+  `TeamID` varchar(100) DEFAULT NULL,
+  `ImageUrl` varchar(255) DEFAULT NULL,
+  `Status` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-CREATE TABLE  feedback   
-( 
-id int NOT NULL AUTO_INCREMENT,
-Uname VARCHAR(100) NOT NULL,   
-Entity VARCHAR(50) NOT NULL,   
-Feedback VARCHAR(65535) NOT NULL,
-PRIMARY KEY (id)
-); 
+INSERT INTO `teammemberdetails1` (`MemberID`, `MemberName`, `TeamID`, `ImageUrl`, `Status`) VALUES
+('007', 'Naveen', '2', 'images/naveen.jpg', 'online'),
+('10', 'Vishnu', '2', 'images/vishnu.jpg', 'online'),
+('31', 'asif', '3', 'images/profile.jpg', 'online'),
+('32', 'kushal', '3', 'images/profile.jpg', 'online'),
+('321', 'Sreetam', '1', 'images/sreetam.jpg', 'online'),
+('322', 'Kunal', '1', 'images/kunal.jpg', 'online'),
+('324', 'Shesha', '1', 'images/shesha.jpg', 'offline'),
+('325', 'Priya', '1', 'images/profile.jpg', 'online'),
+('33', 'harriet', '3', 'images/profile.jpg', 'online'),
+('34', 'ratan', '3', 'images/profile.jpg', 'online'),
+('8', 'Vishal', '2', 'images/vishal.jpg', 'offline'),
+('9', 'Arun', '2', 'images/arun.jpg\r\n', 'online');
 
-CREATE TABLE  Lvl1_4_Assig   
-( 
-Assignment_id int NOT NULL,
-Objectives VARCHAR(20000) NULL, 
-Outcomes VARCHAR(20000) NULL,
-Questions VARCHAR(20000) NULL,    
-Resources VARCHAR(20000) NULL, 
-PRIMARY KEY (Assignment_id)
-); 
+
+
+CREATE TABLE `teacherlogin` (
+  `Uname` varchar(100) NOT NULL,
+  `Pass` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4; 
+
+
+INSERT INTO `teacherlogin` (`Uname`, `Pass`) VALUES
+('ritu', 'ritu123');
+
+
+
+CREATE TABLE `studentlogin` (
+  `Uname` varchar(100) NOT NULL,
+  `Pass` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `studentlogin` (`Uname`, `Pass`) VALUES
+('arun', 'arun123');
+
+
+CREATE TABLE `otherlogin` (
+  `Uname` varchar(100) NOT NULL,
+  `Pass` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `otherlogin` (`Uname`, `Pass`) VALUES
+('yash', 'yash123');
+
+
+
+CREATE TABLE `feedback` (
+  `id` int(11) NOT NULL,
+  `Uname` varchar(100) NOT NULL,
+  `Entity` varchar(50) NOT NULL,
+  `Feedback` mediumtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4; 
+
+INSERT INTO `feedback` (`id`, `Uname`, `Entity`, `Feedback`) VALUES
+(1001, 'prof. yash', '11', 'Can add more images'),
+(1002, 'prof. yash', '12', 'Make different classes and do not put everything under main.'),
+(1003, 'prof. yash', '13', 'Modularize the entire app.');
+
+
+
+CREATE TABLE `lvl1_4_assig` (
+  `Assignment_id` int(11) NOT NULL,
+  `Objectives` mediumtext DEFAULT NULL,
+  `Outcomes` mediumtext DEFAULT NULL,
+  `Questions` mediumtext DEFAULT NULL,
+  `Resources` mediumtext DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `lvl1_4_assig` (`Assignment_id`, `Objectives`, `Outcomes`, `Questions`, `Resources`) VALUES
+(106, 'The aim of this assignment is to develop students ability to design, implement, test and deploy \r\na complete <br>online web-based application.', 'Students will be able to\r\n<br>\r\n	design the user interface of a web-based application\r\n<br>\r\n	work with Java Servlets and Java Server Pages to create front-end and server-end\r\n<br>\r\n	create tables and query these tables using JSP/Servlets \r\n', 'Create a web-based application that provides an interface for teachers to upload assignments of different <br>subjects to be uploaded on a portal.\r\nOnce the assignment is uploaded, students registered for these<br> subjects get an email notification of the same, along with the assignment details and submission due dates.<br>\r\nMoreover, every student should be able to upload his/her uploaded assignment and the teacher should be<br> able to evaluate the same.\r\nThe teacher should be able to download all submissions made by students and<br> also assign marks through the portal itself.\r\nAdditionally, teachers should also be able to upload slides,<br> additional reference materials on the portal and also post announcements.\r\nYou must upload your project on <br>GitHub and work together to collaboratively develop the same.\r\n', 'None');
+
 
 CREATE TABLE  Lvl2_TBL_Assig   
 ( 
